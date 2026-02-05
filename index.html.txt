@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>حبوبتي 💖</title>
+<style>
+body{
+  font-family: Arial, sans-serif;
+  text-align:center;
+  background:#ffe6f0;
+  overflow-x:hidden;
+  margin:0;
+  padding:0;
+}
+
+header{
+  margin-top:20px;
+}
+
+input,button{
+  padding:10px;
+  font-size:18px;
+  margin:10px;
+  border-radius:6px;
+  border:1px solid #d1005a;
+}
+
+button{
+  background:#d1005a;
+  color:white;
+  cursor:pointer;
+}
+
+#msg{
+  display:none;
+  color:#b0004d;
+  font-size:18px;
+  margin:30px auto;
+  line-height:1.8;
+  background:white;
+  padding:20px;
+  border-radius:12px;
+  box-shadow:0 0 15px rgba(0,0,0,0.2);
+  max-width:90%;
+  position:relative;
+  z-index:10;
+  text-align:right;
+}
+
+img{
+  width:200px;
+  border-radius:15px;
+  margin-bottom:20px;
+}
+
+/* القلوب */
+.heart{
+  position:absolute;
+  width:20px;
+  height:20px;
+  background:red;
+  transform:rotate(-45deg);
+  animation:float linear infinite;
+}
+
+.heart:before,.heart:after{
+  content:"";
+  position:absolute;
+  width:20px;
+  height:20px;
+  background:red;
+  border-radius:50%;
+}
+
+.heart:before{top:-10px; left:0;}
+.heart:after{left:10px; top:0;}
+
+@keyframes float{
+  0%{transform:translateY(0) rotate(-45deg);opacity:1;}
+  100%{transform:translateY(-800px) rotate(-45deg);opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h2>اكتبي كلمة السر يا حبوبتي 💌</h2>
+<input type="password" id="pass" placeholder="كلمة السر">
+<br>
+<button onclick="check()">فتح الرسالة</button>
+</header>
+
+<div id="msg">
+<img src="https://i.ibb.co/2sR8K7D/love.png" alt="حب">
+
+<!-- الرسالة الطويلة تبدأ هنا -->
+حبيبتي الغالية، يا أجمل نعمة ربنا أنعم بيها عليّ، يا أغلى حد في حياتي، يمكن الكلمات تعجز توصف إحساسي ناحيتك، لكن قلبي مش ساكت، قلبي دايمًا بيكلمني عنك، بيقولي إنك الأمان، وإنك السعادة، وإنك الاختيار الصح اللي من أول مرة ما ندمتش عليه ولا ثانية واحدة.
+من يوم ما عرفتك وأنا حاسس إن في نور دخل حياتي، نور خلاني أبص للدنيا بشكل أحلى، خلاني أضحك من قلبي، خلاني أحب الحياة، خلاني أتمنى بكرة ييجي بسرعة عشان أعيش فيه معاك، خلاني أصدق إن الحب مش مجرد كلام، الحب إحساس حقيقي، وراحة، وطمأنينة، وسند.
+<!-- تقدر تكمل باقي الرسالة كما أرسلتها بالكامل هنا -->
+❤️❤️❤️
+</div>
+
+<audio id="music" src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" loop></audio>
+
+<script>
+function check(){
+  let p=document.getElementById("pass").value;
+  if(p==="2/9/2023"){ // كلمة السر
+    document.getElementById("msg").style.display="block";
+    hearts();
+    document.getElementById("music").play();
+  }else{
+    alert("كلمة السر غلط 😅");
+  }
+}
+
+function hearts(){
+  for(let i=0;i<50;i++){
+    let h=document.createElement("div");
+    h.className="heart";
+    h.style.left=Math.random()*window.innerWidth+"px";
+    h.style.animationDuration=(4+Math.random()*3)+"s";
+    h.style.width=h.style.height=(10+Math.random()*20)+"px";
+    document.body.appendChild(h);
+  }
+}
+</script>
+
+</body>
+</html>
